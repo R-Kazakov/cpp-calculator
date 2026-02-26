@@ -1,10 +1,28 @@
-#include <string>
-using Number=double;
-using Sign=std::string;
+#pragma once
 
-bool ReadNumber(Number& result);
-bool ReadSign(Sign& operation);
-Sign Save(Number result);
-bool Load(Sign memory, Number& result);
-void Print (Number result);
-bool RunCalculatorCycle();
+#include <string>
+
+using Number = double;
+
+// Реализуйте здесь класс Calculator.
+
+class Calculator{
+public:
+
+    void Set(Number n);
+    Number GetNumber() const;
+    void Add(Number n);
+    void Sub(Number n);
+    void Div(Number n);
+    void Mul(Number n);
+    void Pow(Number n);
+    void Save();
+    void Load();
+    bool HasMem() const;
+    std::string GetNumberRepr() const;
+
+private:
+    Number result_=0;
+    Number memory_number_;
+    bool memory_not_empty_=false;
+};
