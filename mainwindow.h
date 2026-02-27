@@ -34,49 +34,27 @@ public:
 private slots:
 
     void on_pb_1_clicked();
-
     void on_pb_2_clicked();
-
     void on_pb_4_clicked();
-
     void on_pb_5_clicked();
-
     void on_pb_6_clicked();
-
     void on_pb_7_clicked();
-
     void on_pb_8_clicked();
-
     void on_pb_9_clicked();
-
     void on_pb_dot_clicked();
-
     void on_pb_sign_change_clicked();
-
     void on_pb_back_clicked();
-
     void on_pb_plus_clicked();
-
     void on_pb_minus_clicked();
-
     void on_pb_multiply_clicked();
-
     void on_pb_division_clicked();
-
     void on_pb_power_clicked();
-
     void on_pb_result_clicked();
-
     void on_pb_clear_clicked();
-
     void on_pb_open_saved_num_clicked();
-
     void on_pb_save_clicked();
-
     void on_pb_clear_memory_clicked();
-
     void on_pb_3_clicked();
-
     void on_pb_0_clicked();
 
 private:

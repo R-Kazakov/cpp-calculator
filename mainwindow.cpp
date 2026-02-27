@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QString"
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -21,6 +20,9 @@ void MainWindow::SetText(const QString& text){
     input_number_=normal_number;
     ui->l_result->setText(input_number_);
     active_number_=input_number_.toDouble();
+    if (current_operation_==Operation::NO_OPERATION){
+        ui->l_formula->setText("");
+    }
 }
 
 void MainWindow::SetOperation(Operation op){
@@ -34,7 +36,6 @@ void MainWindow::SetOperation(Operation op){
     QString formatted_formula=formula_out.arg(num).arg(operation);
     ui->l_formula->setText(formatted_formula);
     input_number_="";
-    //ui->l_result->setText(input_number_);                     //нужная ли эта строка?
 }
 
 void MainWindow::AddText(const QString& suffix){
@@ -79,8 +80,7 @@ void MainWindow::on_pb_9_clicked(){
     AddText("9");
 }
 
-void MainWindow::on_pb_0_clicked()
-{
+void MainWindow::on_pb_0_clicked(){
     AddText("0");
 }
 
@@ -97,6 +97,15 @@ void MainWindow::on_pb_dot_clicked(){
 void MainWindow::on_pb_sign_change_clicked(){
     if(input_number_.startsWith("-")){
         SetText(input_number_.mid(1));
+    } else if (current_operation_==Operation::NO_OPERATION){
+        ui->l_formula->setText("");
+        active_number_=active_number_*(-1);
+        input_number_=QString::number(active_number_);
+        SetText(input_number_);
+    } else if (current_operation_==Operation::MULTIPLICATION){
+        active_number_=active_number_*(-1);
+        input_number_=QString::number(active_number_);
+        SetText(input_number_);
     } else{
         input_number_.push_front("-");
         SetText(input_number_);
@@ -145,6 +154,7 @@ QString MainWindow::OpToString(Operation op) {
     case Operation::MULTIPLICATION: return "×";
     case Operation::SUBTRACTION: return "−";
     case Operation::POWER: return "^";
+    default: return "";
     }
 }
 
