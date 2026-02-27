@@ -106,8 +106,9 @@ void MainWindow::on_pb_sign_change_clicked(){
         active_number_=active_number_*(-1);
         input_number_=QString::number(active_number_);
         SetText(input_number_);
-    } else{
-        input_number_.push_front("-");
+    }
+    else{
+       input_number_.push_front("-");
         SetText(input_number_);
     }
 }
