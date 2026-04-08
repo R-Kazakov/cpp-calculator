@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -41,7 +42,7 @@ public:
     QPushButton *pb_result;
     QPushButton *pb_0;
     QPushButton *pb_multiply;
-    QPushButton *pb_dot;
+    QPushButton *pb_extra;
     QPushButton *pb_7;
     QLabel *l_formula;
     QPushButton *pb_clear_memory;
@@ -56,6 +57,7 @@ public:
     QPushButton *pb_6;
     QSpacerItem *verticalSpacer_2;
     QPushButton *pb_back;
+    QComboBox *cbm_controller;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -193,12 +195,12 @@ public:
 
         gridLayout->addWidget(pb_multiply, 6, 4, 1, 1);
 
-        pb_dot = new QPushButton(centralwidget);
-        pb_dot->setObjectName("pb_dot");
-        sizePolicy2.setHeightForWidth(pb_dot->sizePolicy().hasHeightForWidth());
-        pb_dot->setSizePolicy(sizePolicy2);
+        pb_extra = new QPushButton(centralwidget);
+        pb_extra->setObjectName("pb_extra");
+        sizePolicy2.setHeightForWidth(pb_extra->sizePolicy().hasHeightForWidth());
+        pb_extra->setSizePolicy(sizePolicy2);
 
-        gridLayout->addWidget(pb_dot, 9, 0, 1, 1);
+        gridLayout->addWidget(pb_extra, 9, 0, 1, 1);
 
         pb_7 = new QPushButton(centralwidget);
         pb_7->setObjectName("pb_7");
@@ -290,6 +292,18 @@ public:
 
         gridLayout->addWidget(pb_back, 9, 2, 1, 1);
 
+        cbm_controller = new QComboBox(centralwidget);
+        cbm_controller->addItem(QString());
+        cbm_controller->addItem(QString());
+        cbm_controller->addItem(QString());
+        cbm_controller->addItem(QString());
+        cbm_controller->addItem(QString());
+        cbm_controller->addItem(QString());
+        cbm_controller->addItem(QString());
+        cbm_controller->setObjectName("cbm_controller");
+
+        gridLayout->addWidget(cbm_controller, 0, 0, 1, 1);
+
         gridLayout->setRowStretch(0, 3);
         gridLayout->setRowStretch(1, 2);
         gridLayout->setRowStretch(2, 1);
@@ -328,7 +342,7 @@ public:
         pb_result->setText(QCoreApplication::translate("MainWindow", "=", nullptr));
         pb_0->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         pb_multiply->setText(QCoreApplication::translate("MainWindow", "\303\227", nullptr));
-        pb_dot->setText(QCoreApplication::translate("MainWindow", ".", nullptr));
+        pb_extra->setText(QCoreApplication::translate("MainWindow", ".", nullptr));
         pb_7->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
         l_formula->setText(QCoreApplication::translate("MainWindow", "l_formula", nullptr));
         pb_clear_memory->setText(QCoreApplication::translate("MainWindow", "MC", nullptr));
@@ -340,6 +354,14 @@ public:
         pb_plus->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
         pb_6->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
         pb_back->setText(QCoreApplication::translate("MainWindow", "\342\214\253", nullptr));
+        cbm_controller->setItemText(0, QCoreApplication::translate("MainWindow", "double", nullptr));
+        cbm_controller->setItemText(1, QCoreApplication::translate("MainWindow", "float", nullptr));
+        cbm_controller->setItemText(2, QCoreApplication::translate("MainWindow", "uint8_t", nullptr));
+        cbm_controller->setItemText(3, QCoreApplication::translate("MainWindow", "int", nullptr));
+        cbm_controller->setItemText(4, QCoreApplication::translate("MainWindow", "int64_t", nullptr));
+        cbm_controller->setItemText(5, QCoreApplication::translate("MainWindow", "size_t", nullptr));
+        cbm_controller->setItemText(6, QCoreApplication::translate("MainWindow", "Rational", nullptr));
+
     } // retranslateUi
 
 };
