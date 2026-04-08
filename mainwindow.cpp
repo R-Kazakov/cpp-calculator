@@ -45,16 +45,16 @@ void MainWindow::SetExtraKey(const std::optional<std::string>& key) {
 
 // Методы установки колбэков
 void MainWindow::SetDigitKeyCallback(std::function<void(int key)> cb) {
-    digit_cb_ = std::move(cb);
+    digit_cb_ = cb;
 }
 void MainWindow::SetProcessOperationKeyCallback(std::function<void(Operation key)> cb) {
-    operation_cb_ = std::move(cb);
+    operation_cb_ = cb;
 }
 void MainWindow::SetProcessControlKeyCallback(std::function<void(ControlKey key)> cb) {
-    control_cb_ = std::move(cb);
+    control_cb_ = cb;
 }
 void MainWindow::SetControllerCallback(std::function<void(ControllerType controller)> cb) {
-    controller_cb_ = std::move(cb);
+    controller_cb_ = cb;
 }
 
 // ─── Слоты кнопок (только диспетчеризация в контроллер) ──────────────────────────
