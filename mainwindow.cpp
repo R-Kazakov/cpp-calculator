@@ -59,75 +59,121 @@ void MainWindow::SetControllerCallback(std::function<void(ControllerType control
 
 // ─── Слоты кнопок (только диспетчеризация в контроллер) ──────────────────────────
 void MainWindow::on_pb_0_clicked() {
-    if (digit_cb_) digit_cb_(0);
+    if (digit_cb_){
+        digit_cb_(0);
+    }
 }
 void MainWindow::on_pb_1_clicked() {
-    if (digit_cb_) digit_cb_(1);
+    if (digit_cb_){
+        digit_cb_(1);
+    }
 }
 void MainWindow::on_pb_2_clicked() {
-    if (digit_cb_) digit_cb_(2);
+    if (digit_cb_){
+        digit_cb_(2);
+    }
 }
 void MainWindow::on_pb_3_clicked() {
-    if (digit_cb_) digit_cb_(3);
+    if (digit_cb_){
+        digit_cb_(3);
+    }
 }
 void MainWindow::on_pb_4_clicked() {
-    if (digit_cb_) digit_cb_(4);
+    if (digit_cb_){
+        digit_cb_(4);
+    }
 }
 void MainWindow::on_pb_5_clicked() {
-    if (digit_cb_) digit_cb_(5);
+    if (digit_cb_){
+        digit_cb_(5);
+    }
 }
 void MainWindow::on_pb_6_clicked() {
-    if (digit_cb_) digit_cb_(6);
+    if (digit_cb_){
+        digit_cb_(6);
+    }
 }
 void MainWindow::on_pb_7_clicked() {
-    if (digit_cb_) digit_cb_(7);
+    if (digit_cb_){
+        digit_cb_(7);
+    }
 }
 void MainWindow::on_pb_8_clicked() {
-    if (digit_cb_) digit_cb_(8);
+    if (digit_cb_){
+        digit_cb_(8);
+    }
 }
 void MainWindow::on_pb_9_clicked() {
-    if (digit_cb_) digit_cb_(9);
+    if (digit_cb_){
+        digit_cb_(9);
+    }
 }
 
 void MainWindow::on_pb_plus_clicked() {
-    if (operation_cb_) operation_cb_(Operation::ADDITION);
+    if (operation_cb_){
+        operation_cb_(Operation::ADDITION);
+    }
 }
 void MainWindow::on_pb_minus_clicked() {
-    if (operation_cb_) operation_cb_(Operation::SUBTRACTION);
+    if (operation_cb_){
+        operation_cb_(Operation::SUBTRACTION);
+    }
 }
 void MainWindow::on_pb_multiply_clicked() {
-    if (operation_cb_) operation_cb_(Operation::MULTIPLICATION);
+    if (operation_cb_){
+        operation_cb_(Operation::MULTIPLICATION);
+    }
 }
 void MainWindow::on_pb_division_clicked() {
-    if (operation_cb_) operation_cb_(Operation::DIVISION);
+    if (operation_cb_){
+        operation_cb_(Operation::DIVISION);
+    }
 }
 void MainWindow::on_pb_power_clicked() {
-    if (operation_cb_) operation_cb_(Operation::POWER);
+    if (operation_cb_){
+        operation_cb_(Operation::POWER);
+    }
 }
 
 void MainWindow::on_pb_result_clicked() {
-    if (control_cb_) control_cb_(ControlKey::EQUALS);
+    if (control_cb_){
+        control_cb_(ControlKey::EQUALS);
+    }
 }
 void MainWindow::on_pb_clear_clicked()  {
-    if (control_cb_) control_cb_(ControlKey::CLEAR);
+    if (control_cb_){
+        control_cb_(ControlKey::CLEAR);
+    }
 }
 void MainWindow::on_pb_sign_change_clicked() {
-    if (control_cb_) control_cb_(ControlKey::PLUS_MINUS);
+    if (control_cb_){
+        control_cb_(ControlKey::PLUS_MINUS);
+    }
 }
 void MainWindow::on_pb_back_clicked() {
-    if (control_cb_) control_cb_(ControlKey::BACKSPACE);
+    if (control_cb_){
+        control_cb_(ControlKey::BACKSPACE);
+    }
 }
 void MainWindow::on_pb_open_saved_num_clicked() {
-    if (control_cb_) control_cb_(ControlKey::MEM_LOAD);
+    if (control_cb_){
+        control_cb_(ControlKey::MEM_LOAD);
+    }
 }
 void MainWindow::on_pb_save_clicked() {
-    if (control_cb_) control_cb_(ControlKey::MEM_SAVE);
+    if (control_cb_){
+        control_cb_(ControlKey::MEM_SAVE);
+    }
 }
 void MainWindow::on_pb_clear_memory_clicked() {
-    if (control_cb_) control_cb_(ControlKey::MEM_CLEAR);
+    if (control_cb_){
+        control_cb_(ControlKey::MEM_CLEAR);
+    }
 }
 void MainWindow::on_tb_extra_clicked(){
-    if (control_cb_) control_cb_(ControlKey::EXTRA_KEY);
+    if (control_cb_){
+        control_cb_(ControlKey::EXTRA_KEY);
+    }
 }
 
 void MainWindow::on_cmb_controller_currentIndexChanged(int index){
